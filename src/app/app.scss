@@ -1,0 +1,22 @@
+div.container{
+    display: flex;
+    height: 100vh;
+
+    div.left-div{
+        display: inherit;
+        flex-direction: column;
+        width: 70%;
+        height: 100%;
+
+        div.top-div{
+            flex-grow: 1;
+        }
+        div.main-left-div{
+            height:80%;
+        }
+    }
+    div.right-div{
+        flex-grow: 1;
+        height: 100%;
+    }
+}
