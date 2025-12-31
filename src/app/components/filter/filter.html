@@ -1,0 +1,36 @@
+<div class="filter">
+    <form action="">
+        <div class="form__name">
+            <mat-form-field>
+                <mat-label>Nome do utilizador</mat-label>
+                <input matInput placeholder="Nome do utilizador" value="" name="filterText" />
+            </mat-form-field>
+        </div>
+
+        <div class="form__date-picker">
+            <mat-form-field>
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                    <input matStartDate formControlName="start" placeholder="Start date">
+                    <input matEndDate formControlName="end" placeholder="End date">
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+        </div>
+        <div class="form__status">
+            <mat-form-field>
+                <mat-label>Select an option</mat-label>
+                <mat-select [(value)]="selected">
+                    <mat-option value=true>Sim</mat-option>
+                    <mat-option value=false>Não</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <p>You selected: {{selected}}</p>
+        </div>
+        <div class="form__button">
+            <button matButton="filled">Filtrar</button>
+        </div>
+    </form>
+</div>

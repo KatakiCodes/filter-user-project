@@ -2,11 +2,17 @@ import { NgModule } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatListModule } from '@angular/material/list';
 import { MatDivider } from "@angular/material/list";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {provideNativeDateAdapter} from '@angular/material/core'
+import {MatSelectModule} from '@angular/material/select';
 
 
 
 @NgModule({
-  imports: [MatButtonModule, MatListModule, MatDivider],
-  exports: [MatButtonModule, MatListModule, MatDivider],
+  imports: [MatButtonModule, MatListModule, MatDivider, MatInputModule, MatFormFieldModule, MatDatepickerModule, MatSelectModule],
+  providers: [provideNativeDateAdapter()],
+  exports: [MatButtonModule, MatListModule, MatDivider, MatInputModule, MatFormFieldModule,MatDatepickerModule, MatSelectModule],
 })
 export class AngularMaterialModule {}
