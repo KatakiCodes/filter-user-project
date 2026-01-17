@@ -12,6 +12,6 @@ import { UserDataList } from './data/user-data-list';
 })
 export class App {
   protected readonly title = signal('filter-user-project');
-  userSelected: IUser = UserDataList[0];
+  userSelected: IUser = UserDataList[1];
 
 }

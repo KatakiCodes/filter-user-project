@@ -13,7 +13,7 @@ export const UserDataList: IUser[] = [
       estado: "Luanda",
       pais: "Angola"
     },
-    telefone: "923456789",
+    telefone: "244923456789",
     ativo: true,
     funcao: "Analista Financeira",
     dataCadastro: new Date("2025-01-10T00:00:00"),

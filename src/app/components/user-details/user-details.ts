@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { AngularMaterialModule } from '../../angular-material/angular-material.module';
 import { IUser } from '../../interfaces/user/user.interface';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @Component({
   selector: 'app-user-details',
-  imports: [AngularMaterialModule],
+  imports: [AngularMaterialModule, PipesModule],
   templateUrl: './user-details.html',
   styleUrl: './user-details.scss',
 })
