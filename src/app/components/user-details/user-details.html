@@ -5,39 +5,39 @@
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-            <span class="text-bold">Nome:&nbsp;</span><span>fulano da silva</span>
+            <span class="text-bold">Nome:&nbsp;</span><span>{{ user.nome }}</span>
         </mat-list-item>
         <mat-divider></mat-divider>
 
         <mat-list-item>
-            <span class="text-bold">Email:&nbsp;</span><span>user@gmail.com</span>
+            <span class="text-bold">Email:&nbsp;</span><span>{{ user.email }}</span>
         </mat-list-item>
         <mat-divider></mat-divider>
 
         <mat-list-item>
-            <span class="text-bold">Telefone:&nbsp;</span><span>(+244)998558745</span>
+            <span class="text-bold">Telefone:&nbsp;</span><span> {{ user.telefone }} </span>
         </mat-list-item>
         <mat-divider></mat-divider>
 
         <mat-list-item>
             <span class="text-bold">Endereço:&nbsp;</span>
-            <span>Rua 1 Nº 23, Bairro X, Cidade Y
-            </span>
+            <span>{{ user.endereco?.rua }}, {{ user.endereco?.numero }}, {{ user.endereco?.cidade }}, {{ user.endereco?.pais }}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+
+        <mat-list-item>
+            <span class="text-bold">Ativo:&nbsp;</span><span>{{ user.ativo }}</span>
         </mat-list-item>
         <mat-divider></mat-divider>
 
         <mat-list-item>
-            <span class="text-bold">Ativo:&nbsp;</span><span>Sim</span>
+            <span class="text-bold">Função:&nbsp;</span><span>{{ user.funcao }}</span>
         </mat-list-item>
         <mat-divider></mat-divider>
 
         <mat-list-item>
-            <span class="text-bold">Função:&nbsp;</span><span>Desenvolvedor Backend</span>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-
-        <mat-list-item>
-            <span class="text-bold">Data de cadastro:&nbsp;</span><span>11-11-2025</span>
+            <span class="text-bold">Data de cadastro:&nbsp;</span><span>{{ user.dataCadastro }}</span>
         </mat-list-item>
         <mat-divider></mat-divider>
     </mat-list>

@@ -3,23 +3,23 @@
         <!-- nome -->
         <ng-container matColumnDef="nome">
             <th mat-header-cell *matHeaderCellDef> Nome. </th>
-            <td class="cell-option" mat-cell *matCellDef="let element" (click)="onSelectUser(element)" > {{element.nome}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
         </ng-container>
 
         <!-- data de cadastro -->
         <ng-container matColumnDef="dataCadastro">
             <th mat-header-cell *matHeaderCellDef> Data de cadastro </th>
-            <td class="cell-option" mat-cell *matCellDef="let element"> {{element.dataCadastro}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.dataCadastro}} </td>
         </ng-container>
 
         <!-- ativo -->
         <ng-container matColumnDef="ativo">
             <th mat-header-cell *matHeaderCellDef> ativo</th>
-            <td class="cell-option" mat-cell *matCellDef="let element"> {{element.ativo}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.ativo}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr class="cell-option" mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onSelectUser(row)"  ></tr>
     </table>
 
 </div>
