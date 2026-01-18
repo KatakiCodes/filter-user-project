@@ -21,7 +21,7 @@
 
         <mat-list-item>
             <span class="text-bold">Endereço:&nbsp;</span>
-            <span>{{ user.endereco?.rua }}, {{ user.endereco?.numero }}, {{ user.endereco?.cidade }}, {{ user.endereco?.pais }}</span>
+            <span>{{ user.endereco | address}}</span>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-divider></mat-divider>
