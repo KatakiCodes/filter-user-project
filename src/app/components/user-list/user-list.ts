@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AngularMaterialModule } from '../../angular-material/angular-material.module';
 import { UserDataList } from '../../data/user-data-list';
 import { MatTableDataSource, MatColumnDef } from '@angular/material/table';
@@ -14,8 +14,9 @@ import { PipesModule } from '../../pipes/pipes.module';
 export class UserList {
   dataSource = new MatTableDataSource(UserDataList);
   displayedColumns: string[] = ['nome', 'dataCadastro', 'ativo'];
+  @Output('userSelected') onUserSelected = new EventEmitter<IUser>();
 
   onSelectUser(user: IUser) {
-    console.log(user);
+    this.onUserSelected.emit(user);
   }
 }
