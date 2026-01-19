@@ -3,10 +3,11 @@ import { AngularMaterialModule } from '../../angular-material/angular-material.m
 import { UserDataList } from '../../data/user-data-list';
 import { MatTableDataSource, MatColumnDef } from '@angular/material/table';
 import { IUser } from '../../interfaces/user/user.interface';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @Component({
   selector: 'app-user-list',
-  imports: [AngularMaterialModule, MatColumnDef],
+  imports: [AngularMaterialModule, MatColumnDef, PipesModule],
   templateUrl: './user-list.html',
   styleUrl: './user-list.scss',
 })
