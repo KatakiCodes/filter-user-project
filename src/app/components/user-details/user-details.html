@@ -5,12 +5,12 @@
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-            <span class="text-bold">Nome:&nbsp;</span><span>{{ user.nome }}</span>
+            <span class="text-bold">Nome:&nbsp;</span><span>{{ user.nome | dashIfEmpty}}</span>
         </mat-list-item>
         <mat-divider></mat-divider>
 
         <mat-list-item>
-            <span class="text-bold">Email:&nbsp;</span><span>{{ user.email }}</span>
+            <span class="text-bold">Email:&nbsp;</span><span>{{ user.email | dashIfEmpty}}</span>
         </mat-list-item>
         <mat-divider></mat-divider>
 
@@ -32,7 +32,7 @@
         <mat-divider></mat-divider>
 
         <mat-list-item>
-            <span class="text-bold">Função:&nbsp;</span><span>{{ user.funcao }}</span>
+            <span class="text-bold">Função:&nbsp;</span><span>{{ user.funcao |dashIfEmpty}}</span>
         </mat-list-item>
         <mat-divider></mat-divider>
 
