@@ -11,9 +11,11 @@ import { UserDataList } from './data/user-data-list';
   styleUrl: './app.scss'
 })
 export class App {
+  
   protected readonly title = signal('filter-user-project');
   userSelected: IUser = {} as IUser;
-  showDetails: boolean = true;
+  userList:IUser[] = UserDataList;
+  showDetails: boolean = false;
 
   onSelectUser(user:IUser){
     this.userSelected = user;

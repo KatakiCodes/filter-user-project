@@ -1,9 +1,9 @@
 <div class="filter">
-    <form action="">
+    <form>
         <div class="form__name">
             <mat-form-field>
                 <mat-label>Nome do utilizador</mat-label>
-                <input matInput placeholder="Nome do utilizador" value="" name="filterText" />
+                <input matInput placeholder="Nome do utilizador" value="" name="filterText" [(ngModel)]="filter.name" />
             </mat-form-field>
         </div>
 
@@ -11,8 +11,8 @@
             <mat-form-field>
                 <mat-label>Enter a date range</mat-label>
                 <mat-date-range-input [rangePicker]="picker">
-                    <input matStartDate formControlName="start" placeholder="Start date">
-                    <input matEndDate formControlName="end" placeholder="End date">
+                    <input matStartDate name="startDate" [(ngModel)]="filter.startDate" placeholder="Start date">
+                    <input matEndDate name="endDate" [(ngModel)]="filter.endDate" placeholder="End date">
                 </mat-date-range-input>
                 <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -22,15 +22,16 @@
         <div class="form__status">
             <mat-form-field>
                 <mat-label>Select an option</mat-label>
-                <mat-select [(value)]="selected">
-                    <mat-option value=true>Sim</mat-option>
-                    <mat-option value=false>Não</mat-option>
+                <mat-select [(value)]="selectedStatus" name="status" >
+                    @for (options of statusOptions; track $index) {
+                        <mat-option [value]="options.value">{{options.viewValue}}</mat-option>
+                    }
                 </mat-select>
             </mat-form-field>
-            <p>You selected: {{selected}}</p>
+            <p>You selected: {{selectedStatus}}</p>
         </div>
         <div class="form__button">
-            <button matButton="filled">Filtrar</button>
+            <button (click)="onSubmit()" matButton="filled">Filtrar</button>
         </div>
     </form>
 </div>
