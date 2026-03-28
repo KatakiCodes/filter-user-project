@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AngularMaterialModule } from '../../angular-material/angular-material.module';
@@ -15,7 +15,8 @@ import { FilterUserInterface } from '../../interfaces/filter-user.interface';
 export class Filter {
   
   selectedStatus: boolean | undefined = undefined;
-
+  @Output() onFilterEmitter = new EventEmitter<FilterUserInterface>();
+  
   filter: FilterUserInterface = {
     name: undefined,
     startDate: undefined,
@@ -29,6 +30,6 @@ export class Filter {
   ];
 
   onSubmit() {
-    console.log('Filter submitted:', this.filter);
+    this.onFilterEmitter.emit(this.filter);
   }
 }

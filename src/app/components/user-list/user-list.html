@@ -1,5 +1,5 @@
 <div class="user-list">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="userList" class="mat-elevation-z8">
         <!-- nome -->
         <ng-container matColumnDef="nome">
             <th mat-header-cell *matHeaderCellDef> Nome. </th>
@@ -19,7 +19,8 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr class="cell-option" mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onSelectUser(row)"  ></tr>
+        <tr class="cell-option" mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onSelectUser(row)">
+        </tr>
     </table>
 
 </div>

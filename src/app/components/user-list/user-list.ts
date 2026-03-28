@@ -3,7 +3,7 @@ import { AngularMaterialModule } from '../../angular-material/angular-material.m
 import { MatTableDataSource, MatColumnDef } from '@angular/material/table';
 import { IUser } from '../../interfaces/user/user.interface';
 import { PipesModule } from '../../pipes/pipes.module';
-import { UserDataList } from '../../data/user-data-list';
+
 
 @Component({
   selector: 'app-user-list',
@@ -13,8 +13,7 @@ import { UserDataList } from '../../data/user-data-list';
 })
 export class UserList {
 
-  @Input({required:true}) userList:IUser[] = UserDataList;
-  dataSource = new MatTableDataSource(this.userList);
+  @Input({ required: true }) userList: IUser[] = [];
   displayedColumns: string[] = ['nome', 'dataCadastro', 'ativo'];
   @Output('userSelected') onUserSelected = new EventEmitter<IUser>();
 
